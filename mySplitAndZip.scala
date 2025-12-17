@@ -25,5 +25,12 @@ def myZip[A, B](as: List[A], bs: List[B]): List[(A, B)] =
     case _ => Nil
 
 @main def tests(): Unit = 
-  println(myZip(List(1,2,3), List("a", "b","c", "d")))
   println(mySplitAt(2, List(1,2,3,4,5)))
+  println(mySplitAt(5, List()))
+  println(mySplitAt(0, List(1,2,3,4,5,6)))
+  println(mySplitAt(10, List(1,2,3)))
+
+  println(myZip(List(1,2,3), List("a", "b","c", "d")))
+  println(myZip(List(), List()))
+  println(myZip(List(1,2,3), List()))
+  println(myZip(List(), List(1,2,3)))
