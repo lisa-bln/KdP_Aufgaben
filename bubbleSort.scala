@@ -1,7 +1,7 @@
 /* 
-pre:
-eff:
-erg:
+pre: Eingabe ist eine Liste aus Integern.
+eff: keine 
+erg: Liste in welcher die Einträge der ersten Liste aufsteigend sortiert wurden.
 
 */
 
