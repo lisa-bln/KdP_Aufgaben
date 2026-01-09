@@ -9,8 +9,9 @@ enum Form:
 //1b)
 //Signatur: Form => Double
 //Spezifikation:
-//Voraussetzung: Längen echt größer 0, also keine leeren Formen zulässig
-//Ergebnis: Gibt Fläche der Form aus    
+//Voraussetzung: Längen echt größer 0, also keine leeren Formen zulässig.
+//Effekt: keiner
+//Ergebnis: Gibt Fläche der Form aus.    
 def flaeche(f:Form):Double=
   import Form.*
   f match
@@ -25,8 +26,9 @@ def flaeche(f:Form):Double=
 //1c)
 //Signatur: Form => Double
 //Spezifikation:
-//Voraussetzung: Längen echt größer 0, also keine leeren Formen zulässig
-//Ergebnis: Gibt Fläche der Form aus 
+//Voraussetzung: Längen echt größer 0, also keine leeren Formen.
+//Effekt: keiner
+//Ergebnis: Gibt Umfang der Form aus.
 def umfang(f: Form):Double= 
   import Form.*
   f match
