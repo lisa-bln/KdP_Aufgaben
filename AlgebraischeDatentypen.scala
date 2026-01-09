@@ -50,6 +50,16 @@ object Form:
 @main def run(): Unit =
   import Form.*
   import Form.given_Ordering_Form.mkOrderingOps
+  println(flaeche(Quadrat(2)))
   println(flaeche(Dreieck(1, 1, 1)))
-  println(umfang(Parallelogram(3, 4, 3)))
-  println(Dreieck(1, 1, 1) == Parallelogram(3, 4, 3))
+  println(flaeche(Parallelogram(3, 4, 3)))
+  println(umfang(Quadrat(2)))
+  println(umfang(Dreieck(1, 1, 1)))
+  println(umfang(Parallelogram(3, 4, 3)))  
+  println(Dreieck(1, 1, 1) <= Parallelogram(3, 4, 3))
+  println(Dreieck(1, 1, 1) >= Parallelogram(3, 4, 3))
+  println(Quadrat(3) <= Quadrat(3))
+  println(Quadrat(3) >= Quadrat(3))
+  println(Rechteck(2, 4) < Parallelogram(2, 4, 5))
+  println(Kreis(1) > Kreis(3))
+  println(Dreieck(2, 2, 3) < Quadrat(3))
