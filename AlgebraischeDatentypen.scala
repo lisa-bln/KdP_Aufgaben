@@ -63,3 +63,43 @@ object Form:
   println(Rechteck(2, 4) < Parallelogram(2, 4, 5))
   println(Kreis(1) > Kreis(3))
   println(Dreieck(2, 2, 3) < Quadrat(3))
+  import BBaum.*
+  println(size(Knoten(10,Knoten(5,Knoten(4,Nix,Nix),Knoten(7,Knoten(6,Nix,Nix),Knoten(8,Nix,Nix))),Knoten(30,Knoten(20,Nix,Knoten(22,Nix,Nix)),Nix))))
+  println(size(Knoten(12,Knoten(42,Knoten(6,Knoten(2,Nix, Nix),Nix),Knoten(99,Knoten(23, Nix,Nix), Knoten(36, Nix,Nix))),Knoten(14,Knoten(3,Nix,Knoten(7, Nix, Nix)),Nix))))
+  println(inorder(Knoten(10,Knoten(5,Knoten(4,Nix,Nix),Knoten(7,Knoten(6,Nix,Nix),Knoten(8,Nix,Nix))),Knoten(30,Knoten(20,Nix,Knoten(22,Nix,Nix)),Nix))))
+  println(inorder(Knoten(12,Knoten(42,Knoten(6,Knoten(2,Nix, Nix),Nix),Knoten(99,Knoten(23, Nix,Nix), Knoten(36, Nix,Nix))),Knoten(14,Knoten(3,Nix,Knoten(7, Nix, Nix)),Nix))))
+
+
+
+/* Aufgabe 2
+b)
+*/
+enum BBaum[+T]:
+    case Nix
+    case Knoten(value:T,lKind:BBaum[T],rKind:BBaum[T])
+/*
+Signatur: BBaum[T] => Int
+Spezifikation:
+Voraussetzung:
+Effekt: keiner
+Ergebnis: Anzahl der Knoten
+*/
+def size [T](baum:BBaum[T]):Int =
+    import BBaum.*
+    baum match
+    case Nix => 0
+    case Knoten(value,lKind,rKind) => 1 + size(lKind) + size (rKind)
+
+/*
+c)
+Signatur: BBaum[T] => List[T]
+Spezifikation:
+Voraussetzung:
+Effekt: keiner
+Ergebnis: Liste mit Elementen des BBaumes in Reihenfolge der Inorder-Traversierung
+*/
+def inorder [T](baum:BBaum[T]):List[T] =
+    import BBaum.*
+    baum match
+    case Nix => Nil
+    case Knoten(value, lKind, rKind) => inorder(lKind):::(value::inorder(rKind))
